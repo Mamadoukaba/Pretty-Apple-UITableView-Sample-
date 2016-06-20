@@ -10,13 +10,12 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var ratingLabel: UILabel!
-    
+    //MARK: - IBOutlet
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     
-    
+     //MARK: - Helper Methods
     func configureCellWith(product: Product) {
         productImageView.image = product.image
         productTitleLabel.text = product.title

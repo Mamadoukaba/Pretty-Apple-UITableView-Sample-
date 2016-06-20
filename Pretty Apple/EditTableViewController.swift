@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditTableViewController: UITableViewController {
+class EditTableViewController: UITableViewController, UITextFieldDelegate {
     
     //MARK: - Properties
     var product: Product?
@@ -34,5 +34,18 @@ class EditTableViewController: UITableViewController {
         product?.image = ProductImageView.image!
         product?.description = productDescriptionTextView.text!
     }
+    
+    //MARK: - UITextFieldDelegate
    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if let textField = productTitleTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    //MARK: - UIScrollViewDelegate
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        productDescriptionTextView.resignFirstResponder()
+    }
 }

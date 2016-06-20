@@ -13,10 +13,13 @@ class AppleProductsTableViewController: UITableViewController {
     //MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = editButtonItem()
-        
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        navigationItem.rightBarButtonItem = editButtonItem()
+        
+        
         
     }
     

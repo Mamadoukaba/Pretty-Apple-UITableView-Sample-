@@ -10,8 +10,11 @@ import UIKit
 
 class ProductDetailViewController: UIViewController {
 
+    //MARK: - Properties
     var product: Product?
     
+    
+    //MARK: - IBOutlets
     @IBOutlet weak var productImageView: UIImageView!
     
     override func viewDidLoad() {
