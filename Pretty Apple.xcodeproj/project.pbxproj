@@ -51,6 +51,7 @@
 		65066B6C1D13441400516678 /* star_uns.png in Resources */ = {isa = PBXBuildFile; fileRef = 65066B471D13441400516678 /* star_uns.png */; };
 		65066B6F1D13442400516678 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65066B6D1D13442400516678 /* Product.swift */; };
 		65066B701D13442400516678 /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65066B6E1D13442400516678 /* ProductLine.swift */; };
+		653753EC1D17353300968A39 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653753EB1D17353300968A39 /* ProductTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		65066B471D13441400516678 /* star_uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_uns.png; sourceTree = "<group>"; };
 		65066B6D1D13442400516678 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		65066B6E1D13442400516678 /* ProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLine.swift; sourceTree = "<group>"; };
+		653753EB1D17353300968A39 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 			children = (
 				65066B0E1D13438200516678 /* AppDelegate.swift */,
 				65066B121D13438200516678 /* Main.storyboard */,
-				65066B201D1343C700516678 /* AppleProductsTableViewController.swift */,
+				653753ED1D17362000968A39 /* Controller */,
 				65066B151D13438200516678 /* Assets.xcassets */,
 				65066B221D13441400516678 /* Product Images */,
 				65066B171D13438200516678 /* LaunchScreen.storyboard */,
@@ -195,6 +197,15 @@
 				65066B6E1D13442400516678 /* ProductLine.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		653753ED1D17362000968A39 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				653753EB1D17353300968A39 /* ProductTableViewCell.swift */,
+				65066B201D1343C700516678 /* AppleProductsTableViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			files = (
 				65066B211D1343C700516678 /* AppleProductsTableViewController.swift in Sources */,
 				65066B701D13442400516678 /* ProductLine.swift in Sources */,
+				653753EC1D17353300968A39 /* ProductTableViewCell.swift in Sources */,
 				65066B0F1D13438200516678 /* AppDelegate.swift in Sources */,
 				65066B6F1D13442400516678 /* Product.swift in Sources */,
 			);
@@ -458,6 +470,7 @@
 				65066B1F1D13438200516678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

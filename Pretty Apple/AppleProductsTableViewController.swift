@@ -13,8 +13,11 @@ class AppleProductsTableViewController: UITableViewController {
     //MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.rightBarButtonItem = editButtonItem()
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     //MARK: - Data Source
@@ -42,13 +45,12 @@ class AppleProductsTableViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Product Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Product Cell", forIndexPath: indexPath) as! ProductTableViewCell
 
         let productLine = productLines[indexPath.section]
         let product = productLine.products[indexPath.row]
-        cell.textLabel?.text = product.title
-        cell.detailTextLabel?.text = product.description
-        cell.imageView?.image = product.image
+        
+        cell.configureCellWith(product)
 
         return cell
     }
