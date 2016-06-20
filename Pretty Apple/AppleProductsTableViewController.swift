@@ -20,6 +20,12 @@ class AppleProductsTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     //MARK: - Data Source
     
     lazy var productLines: [ProductLine] = {

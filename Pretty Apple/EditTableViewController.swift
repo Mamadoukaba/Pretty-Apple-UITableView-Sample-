@@ -26,5 +26,13 @@ class EditTableViewController: UITableViewController {
         productTitleTextField.text = product?.title
         productDescriptionTextView.text = product?.description
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        product?.title = productTitleTextField.text!
+        product?.image = ProductImageView.image!
+        product?.description = productDescriptionTextView.text!
+    }
    
 }
