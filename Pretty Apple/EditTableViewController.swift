@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditTableViewController: UITableViewController, UITextFieldDelegate {
+class EditTableViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: - Properties
     var product: Product?
@@ -21,7 +21,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Edit Product"
         ProductImageView.image = product?.image
         productTitleTextField.text = product?.title
         productDescriptionTextView.text = product?.description
@@ -47,5 +47,32 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     //MARK: - UIScrollViewDelegate
     override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         productDescriptionTextView.resignFirstResponder()
+    }
+    
+    //MARK: - Table View Interaction
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
+    //MARK: - ImagePickerView
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let picker = UIImagePickerController()
+            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary //.camera
+            picker.allowsEditing = false
+            picker.delegate = self
+            presentViewController(picker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        product?.image = image
+        ProductImageView.image = image
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
