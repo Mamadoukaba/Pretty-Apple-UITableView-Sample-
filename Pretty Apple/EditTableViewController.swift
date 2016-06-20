@@ -35,6 +35,18 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIIma
         product?.description = productDescriptionTextView.text!
     }
     
+    //Action/Target
+    
+    @IBAction func StarIsPressed(sender: UIButton) {
+        if let selectedStar = sender.imageForState(.Selected) {
+            sender.setImage(UIImage(named:"star_sel.png"), forState: .Highlighted)
+        } else {
+            sender.setImage(UIImage(named: "star_uns.png"), forState: .Normal)
+        }
+    }
+    
+    
+    
     //MARK: - UITextFieldDelegate
    
     func textFieldShouldReturn(textField: UITextField) -> Bool {

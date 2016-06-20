@@ -15,11 +15,13 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     
+    
      //MARK: - Helper Methods
     func configureCellWith(product: Product) {
         productImageView.image = product.image
         productTitleLabel.text = product.title
         productDescriptionLabel.text = product.description
-        
     }
+    
+    
 }

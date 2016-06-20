@@ -21,5 +21,6 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
         
         productImageView.image = product?.image
+       
     }
 }

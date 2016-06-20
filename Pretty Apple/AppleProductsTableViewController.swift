@@ -16,11 +16,7 @@ class AppleProductsTableViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        
         navigationItem.rightBarButtonItem = editButtonItem()
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
