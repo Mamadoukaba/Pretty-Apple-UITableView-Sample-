@@ -10,13 +10,21 @@ import UIKit
 
 class EditTableViewController: UITableViewController {
     
-    //MARK: - IBOutlets
-    
-    
     //MARK: - Properties
-
-
-    // MARK: - UITableViewDataSource
-
+    var product: Product?
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var ProductImageView: UIImageView!
+    @IBOutlet weak var productTitleTextField: UITextField!
+    @IBOutlet weak var productDescriptionTextView: UITextView!
+    
+    // MARK: - View Controller Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ProductImageView.image = product?.image
+        productTitleTextField.text = product?.title
+        productDescriptionTextView.text = product?.description
+    }
    
 }

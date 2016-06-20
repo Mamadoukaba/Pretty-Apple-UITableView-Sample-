@@ -74,7 +74,13 @@ class AppleProductsTableViewController: UITableViewController {
                     let productDetailVC = segue.destinationViewController as! ProductDetailViewController
                     if let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell) {
                         productDetailVC.product = productAtIndexPath(indexPath)
-                } 
+                }
+                
+                case "Show Edit":
+                    let editTableVC = segue.destinationViewController as! EditTableViewController
+                    if let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell) {
+                        editTableVC.product = productAtIndexPath(indexPath)
+                }
                 
                 default: break
             }
