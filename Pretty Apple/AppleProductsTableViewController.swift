@@ -60,8 +60,30 @@ class AppleProductsTableViewController: UITableViewController {
             let productline = productLines[indexPath.section]
             productline.products.removeAtIndex(indexPath.row)
             //Tell the table view that we just modified the Data Source
-//            tableView.reloadData()
+            //tableView.reloadData()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
+    }
+    
+    //MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+                case "Show Detail":
+                    let productDetailVC = segue.destinationViewController as! ProductDetailViewController
+                    if let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell) {
+                        productDetailVC.product = productAtIndexPath(indexPath)
+                } 
+                
+                default: break
+            }
+        }
+    }
+    
+    //MARK: - Helper Method
+    func productAtIndexPath(indexPath: NSIndexPath) -> Product {
+        let productLine = productLines[indexPath.section]
+        return productLine.products[indexPath.row]
     }
 }
